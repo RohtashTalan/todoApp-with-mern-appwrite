@@ -1,8 +1,5 @@
 import React, {useState, useContext, useEffect } from "react";
-import {v4 as uuid} from 'uuid';
-import axios from 'axios';
 import { UserId } from "../Dashboard";
-import {loadModal,callModal,deleteModal,taskIsDone} from './Modals';
 import{crudFunction} from './TodoAppCRUD';
 
 const Todos = () => {

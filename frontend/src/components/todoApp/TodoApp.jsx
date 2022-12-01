@@ -1,12 +1,9 @@
-import React, {useState, useContext, useEffect } from "react";
-import { UserId } from "../Dashboard";
+import React from "react";
 import Todos from "./Todos";
 import TodoSearch from "./Search";
 
 
 const TodosApp = () => {
-const userId = useContext(UserId);
-
 
 return(<>
        {/* main conatiner  */}

@@ -9,13 +9,11 @@ const userId = useContext(UserId);
 
   
 /*********************************************************************
- *  Searching and sorting result
- * 
+ *  Searching 
  */
 
 const [searchArray, setSearchArray] = useState(null);
 const [noSearchResult, setNoSearchResult] = useState(false);
-// const [searchArray, setSearchArray] = useState([]);
 
 const searchTodos = async() => {
 setNoSearchResult(false);
@@ -26,7 +24,6 @@ setNoSearchResult(false);
     await axios.post("/searchQuery", {query:queryString, userId}).then((response) => {
       // result = response.data;
       const todos=response.data.searchResult;
-      console.log(response.data.searchResult);
 
       if(todos.length>0){
        setSearchArray(todos);
@@ -41,12 +38,15 @@ setNoSearchResult(false);
 }
 
 const toggleTab = (id) => {
+
+  // selecting and adding hidden class to tasks panels
 const tabs= document.querySelectorAll('[role="tabpanel"]');
 
 for(let tab of tabs){
   tab.classList.add('hidden')
 }
 
+// toggle of class for which user have slected
 document.getElementById(`tab-${id}`).classList.toggle('hidden');
 
 }
@@ -72,6 +72,8 @@ return(<>
 >No Result Available</div>):('')}
 
 
+{/* // iterating through array if search result present  */}
+
   {searchArray ? (
   <div className="overflow-x-auto w-[90%] h-[80%] mx-auto shadow-md sm:rounded-lg modal h-98 fixed top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 rounded shadow-lg shadow-gray-900 bg-gray-500 text-white divide-y-2 divide-gray-400" tabIndex='3'> 
   <div className="flex">
@@ -85,9 +87,8 @@ return(<>
   </div>
   {/* // tabs */}
   <div className="flex items-start h-full divide-x-2 divide-gray-400 ">
+   
     {/* Tab Title / Todo */}
-
-
     <div className="w-1/6 text-center h-full">
           <ul className="flex flex-col flex-wrap list-none border-b-0 pl-0 mt-4 mr-4 text-white divide-y divide-gray-400" id="tabs-tabVertical" role="tablist">
             {searchArray.map((todo)=>(
@@ -108,16 +109,18 @@ return(<>
               {todo.tasks.length ? (<>
                 <div>
                   <div className="flex w-full justify-between font-bold text-blue-800">
-                  <span className="w-2/6">Title</span>
-                  <span className="w-2/6">Created At</span>
-                  <span className="w-2/6">Updated At</span>
+                  <span>Title</span>
+                  <span>Created At</span>
+                  <span>Updated At</span>
+                  <span>Status</span>
                   </div> 
                   <hr className="shadow-md shadow-gray-300 h-[1px] bg-gray-700 border-0 dark:bg-gray-700"/>
                 {todo.tasks.map((item) => (<>
                   <div className="flex w-full justify-between">
-                  <span className="w-2/6">{item.title} </span>
-                  <span className="w-2/6">{item.createdAt} </span>
-                  <span className="w-2/6">{item.updatedAt} </span>
+                  <span>{item.title}</span>
+                  <span>{item.createdAt} </span>
+                  <span>{item.updatedAt} </span>
+                  <span>{item.isDone} </span>
                   </div>
 
                 </>))}
