@@ -1,7 +1,7 @@
 # Full Fledge TodoApp developed using MongoDb as database, Reactjs as Frontend, Appwrite for authentication 
 
 ![image](https://img.shields.io/badge/iNeuron-Full--Stack%20JavaScript%20Web%20Development%20Course-blue)
-![image](https://img.shields.io/badge/Hitesh%20Choudhry-LOC-brightgreen)
+![image](https://img.shields.io/badge/Hitesh%20Choudhary-LCO-brightgreen)
 ![image](https://img.shields.io/badge/MERN_Stack-AppWrite-orange)
 ![image](https://img.shields.io/badge/Project-full_fledge_Todo_App-blue)
 
@@ -10,7 +10,7 @@
 
 ## About 
 - This TodoApp took me almost 15 hours to develop it. 
-- Todo app first took ask user to signin if account found it took him/her to Dashboard Page 
+- Todo app first ask user to signin if account found it took him/her to Dashboard Page 
 - On DashBoard page user can create Todo Title and then Task inside Todo. Todo/Task saved to mongodb as per schema [Todo Modal](./backened/model/todoModel.js)
 - based on action performed by user Todo Updated/Deleted inside mongoDb and  element reload as, with every action
 - To authenticate user Project use ![image](https://img.shields.io/badge/AppWrite-brightgreen) authentication
