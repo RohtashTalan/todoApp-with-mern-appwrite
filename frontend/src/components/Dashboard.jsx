@@ -10,6 +10,7 @@ const Dashboard = () => {
     const navigate = useNavigate();
     const [userDetails, setUserDetails] = useState();
 
+    
     const signOutUser = async() =>{
         Appwrite.ACCOUNT.deleteSessions();
         navigate("/");
@@ -20,6 +21,7 @@ const Dashboard = () => {
         getUser.then(
             function (response) {
                 setUserDetails(response);
+                console.log(userDetails);
             },
             function (error) {
                 console.log(error);

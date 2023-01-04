@@ -16,6 +16,7 @@ const getTodos = () => {
    })
 }
 
+
 useEffect(()=>{
   getTodos();
 },[userId]);
@@ -118,7 +119,7 @@ const callModal = (type,id,isdone) => {
     case 'taskDelete':
       crudFunction('Task','Delete',id,null).then((res)=>{
         // console.log(res);
-        getTodos(tasksTodo._id);
+        getTodos(tasksTodo._id)
         })
       break;
     case 'isDone':
