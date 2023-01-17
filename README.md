@@ -21,7 +21,8 @@
     - it return array of result 
     - on frontend it showed to user if result are there or 'No result available message showed to user' 
 
-
+## Demo 
+![Demo Video](assests/todo-app.gif)
 
 ## Technology used
 
